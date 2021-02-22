@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Regular"), local("GT-Walsheim-Pro-Regular"), url("assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2"), url("assets/fonts/GTWalsheimPro-Regular.woff") format("woff"), url("assets/fonts/GTWalsheimPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: "GT Walsheim";
+}
+
+header {
+  background-color: #00ccff;
+  padding: 1% 1%;
+  margin-bottom: 2rem;
+}
+header h1 {
+  width: 50%;
+}
+
+main {
+  width: 30%;
+  margin: 0 auto;
+  user-select: none;
+}
+main article.main-weather {
+  background-color: #88e7ff;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+main article.main-weather .temp {
+  font-size: 3rem;
+}
+main article.main-weather .weather-desc {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

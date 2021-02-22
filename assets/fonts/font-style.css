@@ -1,0 +1,16 @@
+
+@font-face {
+  font-display: swap;
+  font-family: "GT Walsheim";
+  font-style: normal;
+  font-weight: 500;
+  src: url("BwModelica-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "GT Walsheim";
+    font-style: normal;
+    font-weight: 400;
+    src: url("BwModelica-Regular.woff2") format("woff2");
+  }
