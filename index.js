@@ -33,7 +33,7 @@ function setIcon(weather) {
 // Get current weather
 (async () => {
 
-    let data = await fetchData("http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=79c32c0c110ffeab2d3cd53a90218dda");
+    let data = await fetchData("https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=79c32c0c110ffeab2d3cd53a90218dda");
     let desc = data.weather[0].main;
     let temp = toCelsius(data.main.temp);
 
@@ -45,7 +45,7 @@ function setIcon(weather) {
 
 // Get weather of next hours
 (async () => {
-    let weather_data = await fetchData("http://api.openweathermap.org/data/2.5/forecast?q=Paris&units=metric&appid=79c32c0c110ffeab2d3cd53a90218dda");
+    let weather_data = await fetchData("https://api.openweathermap.org/data/2.5/forecast?q=Paris&units=metric&appid=79c32c0c110ffeab2d3cd53a90218dda");
     let weather_arr = weather_data.list;
     
     // Get current date
