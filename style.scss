@@ -1,17 +1,6 @@
-@font-face {
-    font-family: 'GT Walsheim Pro';
-    src: local('GT Walsheim Pro Regular'), local('GT-Walsheim-Pro-Regular'),
-        url('assets/fonts/GTWalsheimPro-Regular.woff2') format('woff2'),
-        url('assets/fonts/GTWalsheimPro-Regular.woff') format('woff'),
-        url('assets/fonts/GTWalsheimPro-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-$light-blue: rgb(136, 231, 255);
-
-$blue: rgb(0, 204, 255);
-
+// $light-blue-circle: ;
+$blue: #F7F9FF;
+$light-blue: #DEE4FF;
 
 * {
     margin: 0;
@@ -22,10 +11,69 @@ $blue: rgb(0, 204, 255);
 body {
     width: 100%;
     font-family: "GT Walsheim";
+    background-color: $light-blue;
+    height: 100vh;
+    overflow-x: hidden;
+
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -100;
+    }
+
+    #circle1 {
+        background: mix(#fff, $light-blue, 50%);
+        top: 20%;
+        left: 40%;
+        animation: circle1-anim 16s  alternate-reverse infinite linear;
+    }
+    #circle2 {
+        background: mix(#fff, $light-blue, 70%);
+        top: 50%;
+        left: 10%;
+        animation: circle2-anim 12s  alternate-reverse infinite linear;
+    }
+    #circle3 {
+        width: 200px;
+        height: 200px;
+        background: mix(#fff, $light-blue, 50%);
+        top: 70%;
+        left: 40%;
+        animation: circle3-anim 10s  alternate-reverse infinite linear;
+    }
+}
+
+@keyframes circle1-anim {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(60%, 30%);
+    }
+}
+
+@keyframes circle2-anim {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(20%, 60%);
+    }
+}
+
+@keyframes circle3-anim {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(10%, 10%);
+    }
 }
 
 header {
-    background-color: $blue;
+    background-color: mix(#fff, $light-blue, 50%);
     padding: 1% 1%;
     margin-bottom: 2rem;
     
@@ -38,11 +86,30 @@ main {
     width: 30%;
     margin: 0 auto;
     user-select: none;
+    min-width: 300px;
+
+
+    h2 {
+        font-family: 'Dosis', sans-serif;
+        font-size: 2rem;
+    }
+
+    .today-date {
+        // text-align: center;
+        margin-bottom: 2.5rem;
+        font-family: 'Dosis', sans-serif;
+        font-weight: bold;
+    }
+
+    article {
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 4px;
+        background-color: $blue ;
+    }
+
     article.main-weather {
-        background-color: $light-blue;
         width: 100%;
         border-radius: 10px;
-        padding: 2%;
+        padding: 4%;
         display: flex;
         justify-content: center;
         .temp {
@@ -52,5 +119,13 @@ main {
             font-size: 1.5rem;
             text-align: center;
         }
+    }
+
+    article.today-next-weather {
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px;
+        margin-top: 1rem;
+        padding: 3%;
     }
 }

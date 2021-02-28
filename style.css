@@ -1,25 +1,121 @@
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: local("GT Walsheim Pro Regular"), local("GT-Walsheim-Pro-Regular"), url("assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2"), url("assets/fonts/GTWalsheimPro-Regular.woff") format("woff"), url("assets/fonts/GTWalsheimPro-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   width: 100%;
   font-family: "GT Walsheim";
+  background-color: #DEE4FF;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -100;
+}
+
+body #circle1 {
+  background: #eff2ff;
+  top: 20%;
+  left: 40%;
+  animation: circle1-anim 16s  alternate-reverse infinite linear;
+}
+
+body #circle2 {
+  background: #f5f7ff;
+  top: 50%;
+  left: 10%;
+  animation: circle2-anim 12s  alternate-reverse infinite linear;
+}
+
+body #circle3 {
+  width: 200px;
+  height: 200px;
+  background: #eff2ff;
+  top: 70%;
+  left: 40%;
+  animation: circle3-anim 10s  alternate-reverse infinite linear;
+}
+
+@-webkit-keyframes circle1-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(60%, 30%);
+            transform: translate(60%, 30%);
+  }
+}
+
+@keyframes circle1-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(60%, 30%);
+            transform: translate(60%, 30%);
+  }
+}
+
+@-webkit-keyframes circle2-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(20%, 60%);
+            transform: translate(20%, 60%);
+  }
+}
+
+@keyframes circle2-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(20%, 60%);
+            transform: translate(20%, 60%);
+  }
+}
+
+@-webkit-keyframes circle3-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(10%, 10%);
+            transform: translate(10%, 10%);
+  }
+}
+
+@keyframes circle3-anim {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(10%, 10%);
+            transform: translate(10%, 10%);
+  }
 }
 
 header {
-  background-color: #00ccff;
+  background-color: #eff2ff;
   padding: 1% 1%;
   margin-bottom: 2rem;
 }
+
 header h1 {
   width: 50%;
 }
@@ -27,22 +123,59 @@ header h1 {
 main {
   width: 30%;
   margin: 0 auto;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  min-width: 300px;
 }
+
+main h2 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 2rem;
+}
+
+main .today-date {
+  margin-bottom: 2.5rem;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+}
+
+main article {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+  background-color: #F7F9FF;
+}
+
 main article.main-weather {
-  background-color: #88e7ff;
   width: 100%;
   border-radius: 10px;
-  padding: 2%;
+  padding: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 main article.main-weather .temp {
   font-size: 3rem;
 }
+
 main article.main-weather .weather-desc {
   font-size: 1.5rem;
   text-align: center;
 }
 
+main article.today-next-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 3%;
+}
 /*# sourceMappingURL=style.css.map */
