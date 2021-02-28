@@ -83,9 +83,11 @@ function setIcon(weather) {
     today_date_container.innerHTML = `${day_day(time_today.getDay())} ${time_today.getDate()} | ${time_today.getHours()}:${time_today.getMinutes()}`;
     
 
+    // Show next weather
+    let weather_container = document.querySelector('.today-next-weather');
+    weather_container.innerHTML = ""
 
     weather_arr.forEach(data => {
-        let weather_container = document.querySelector('.today-next-weather');
         var date = new Date(data.dt*1000); // Get date of predicated meteo
         let hours = date.getHours();
         let day   = date.getDate();
@@ -99,6 +101,10 @@ function setIcon(weather) {
             </div>`;
         }
     });
+
+    if (weather_container.textContent == "") {
+        weather_container.style.display = "none"
+    }
 
 })();
 
