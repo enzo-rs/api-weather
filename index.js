@@ -88,25 +88,26 @@ function setIcon(weather) {
     weather_container.innerHTML = ""
 
     weather_arr.forEach(data => {
-        var date = new Date(data.dt*1000); // Get date of predicated meteo
-        let hours = date.getHours();
-        let day   = date.getDate();
+        var date = new Date(data.dt*1000); // Get date of predicated meteo 
         let temp  = data.main.temp;
+        m = date.getMonth()+1,
+        h = date.getHours(),
+        d = date.getDate();
+        xdate = [(d < 10) ? '0' + d : d, (m < 10) ? '0' + m : m, date.getFullYear()].join('/');
 
-        if (day === time_today.getDate()) {
-            weather_container.innerHTML += `
+        weather_container.innerHTML += `
             <div class="next-weather">
                 <h2>${Math.round(temp)}°C</h2>
-                <p>${hours}h</p>
+                <p>${xdate}</p>
+                <p> ${h}h</p>
             </div>`;
-        }
+            
+        
     });
+
 
     if (weather_container.textContent == "") {
         weather_container.style.display = "none"
     }
 
 })();
-
-
-
